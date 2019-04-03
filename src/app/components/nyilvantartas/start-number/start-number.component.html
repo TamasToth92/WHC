@@ -1,0 +1,38 @@
+<app-main-menu></app-main-menu>
+
+<div class="container mt-5 mb-3">
+  <div class="row justify-content-between">
+    <div class="col-9">
+      <h1>Startszámok</h1>
+    </div>
+    <div class="col-3 d-flex justify-content-end align-items-center">
+        <button type="button" class="btn btn-outline-primary" routerLink="/startnumber/addStartNumber">Új hozzáadása</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <table class="table table-bordered table-hover">
+    <thead class="thead">
+      <tr>
+        <th scope="col" class="align-middle">Startszám</th>
+        <th scope="col" class="align-middle">Versenyző neve</th>
+        <th scope="col" class="align-middle">Ló neve</th>
+        <th scope="col" class="align-middle">Státusz</th> 
+        <th></th>
+    <!-- TODO státuszt mire nevezzük át? Azt jelzi, hogy be van-e fizetve az éves díj (talán) -->
+      </tr>
+    </thead >
+    <tbody>
+        <ng-container *ngIf="!isLoading && numbers.length > 0">
+            <tr app-start-number-row *ngFor="let n of numbers" [number]="n" (refreshWithData)="refreshList($event)" (refresh)="refreshList()"></tr>
+        </ng-container>
+        <tr class="text-center" *ngIf="!isLoading && numbers.length == 0">
+            <td colspan="5">Nincs startszám az adatbázisban</td>
+        </tr>
+        <tr class="text-center" *ngIf="isLoading">
+            <td colspan="5">Betöltés...</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

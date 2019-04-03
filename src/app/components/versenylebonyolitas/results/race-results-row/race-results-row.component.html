@@ -1,0 +1,26 @@
+<ng-container *ngIf="! editMode">
+  <td>{{r.startnumber}}</td>
+  <td>{{r.rider}}</td>
+  <td>{{r.horse}}</td>
+  <td>{{r.score}}</td>
+  <td><button type="button" class="btn btn-outline-secondary btn-sm" (click)="setEditMode(true)">Pontozás</button></td>
+</ng-container>
+<ng-container *ngIf="editMode">
+    <td [(ngModel)]="cloneResult.startnumber">{{r.startnumber}}</td>
+    <td [(ngModel)]="cloneResult.rider">{{r.rider}}</td>
+    <td [(ngModel)]="cloneResult.horse">{{r.horse}}</td>
+
+    <td>
+      <input type="text" class="form-control" [(ngModel)]="cloneResult.score">
+    </td>
+
+    <td>
+      <button type="button" class="btn btn-primary btn-sm" (click)="saveResult()" [disabled]="isSaving">
+        <span *ngIf="isSaving" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        <span *ngIf="isSaving">Mentés folyamatban...</span>
+        <span *ngIf="! isSaving">Mentés</span>
+      </button>
+      <button type="button" class="btn btn-outline-secondary btn-sm" (click)="setEditMode(false)"
+        *ngIf="! isSaving">Mégse</button>
+    </td>
+  </ng-container>

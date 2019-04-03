@@ -1,0 +1,39 @@
+.add-button {
+    text-decoration: none;
+    color: #000000;
+    padding: 10px 10px;
+    font-size: 14px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+    vertical-align: right;
+    background-color: #FF6F61;
+    position: right;
+  }
+.venuesTable {
+vertical-align: center;
+}
+
+.table {
+margin-top: 30px;
+}
+
+.btn {
+  background-color: rgba(255, 111, 97, 0.8);
+  color: white;
+  padding: 1em 1.5em;
+  border: #4A4843;
+  margin-top: 70px;
+}
+
+.btn:hover {
+background-color: #4A4843;
+}
+
+.btn:active {
+background-color: rgb(255, 111, 97);
+}
+
+h1{
+  padding-top: 70px;
+}
+
+

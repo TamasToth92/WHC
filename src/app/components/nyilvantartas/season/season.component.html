@@ -1,0 +1,36 @@
+<app-main-menu></app-main-menu>
+<div class="container mt-5 mb-3">
+  <div class="row justify-content-between">
+    <div class="col-9">
+      <h1>Szezonok</h1>
+      <h4>{{ d | date : 'yyyy. MMMM d.' : undefined : 'hu-HU' }}</h4>
+    </div>
+    <div class="col-3 d-flex justify-content-end align-items-center">
+      <button class="btn btn-success add-button">Új szezon nyitása</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <table class="table table-bordered table-hover">
+    <thead class="thead">
+      <tr>
+        <th scope="col">Szezon</th>
+        <th scope="col">Verseny helyszíne</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <ng-container *ngIf="!isLoading && seasons.length > 0">
+            <tr *ngFor="let s of seasons" (refreshWithData)="refreshList($event)" (refresh)="refreshList()"></tr> -->
+        <!-- </ng-container> -->
+        <tr class="text-center" *ngIf="!isLoading && seasons.length == 0">
+            <td colspan="8">Nincs szezon az adatbázisban</td>
+        </tr>
+        <tr class="text-center" *ngIf="isLoading">
+            <td colspan="8">Betöltés...</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

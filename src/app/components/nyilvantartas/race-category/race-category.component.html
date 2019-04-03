@@ -1,0 +1,54 @@
+<app-main-menu></app-main-menu>
+
+<div class="RacePage" id="page">
+  <div class="container mt-5 mb-3">
+    <div class="row justify-content-between">
+      <div class="col-6">
+        <h1>Versenyszámok és kategóriák </h1>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+
+<div class="container">
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel">
+    <ngb-panel>
+      <ng-template ngbPanelTitle>
+        <span>&#9733; Trail &#9733;</span>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+      </ng-template>
+    </ngb-panel>
+
+    <ngb-panel title="Pleasure">
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+      </ng-template>
+    </ngb-panel>
+
+    <ngb-panel title="Horsemanship">
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+      </ng-template>
+    </ngb-panel>
+
+    <ngb-panel title="Ranch riding">
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+      </ng-template>
+    </ngb-panel>
+
+    <ngb-panel title="Reining">
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+      </ng-template>
+    </ngb-panel>
+
+    <ngb-panel title="Egyéb kategóriák">
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+        <button type="button" name="button">Új kategória felvitele</button>
+      </ng-template>
+    </ngb-panel>

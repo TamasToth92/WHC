@@ -1,0 +1,40 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalCenterTitle">Új helyszín hozzáadása</h5>
+
+</div>
+<div class="modal-body">
+  <div class="container">
+    <div class="table form-group name-group">
+        <label for="venueName">Helyszín neve: </label>
+        <input type="name" class="form-control" [ngClass]="{ 'is-invalid' : isVenueNameInvalid }" id="venueName" [(ngModel)]="venue.name">
+
+        <div class="invalid-feedback">Kérlek add meg a nevet!</div>
+
+        <label for="EntryFee">Nevezési díj: </label>
+
+        <input type="entryFee" class="form-control" [ngClass]="{'is-invalid' : isEntryFeeInvalid()}" id="entryFee" [(ngModel)]="venue.entryFee">
+        <div class="invalid-feedback">Kérlek csak számokat adj meg!</div>
+
+        <label for="startFee">Start díj:</label>
+        <!--input type="text" name="" value=""-->
+        <input type="startFee" class="form-control" [ngClass]="{'is-invalid' : isStartFeeInvalid()}" id="startFee" [(ngModel)]="venue.startFee">
+        <div class="invalid-feedback">Kérlek csak számokat adj meg!</div>
+
+        <label for="boxFee">Box díj:</label>
+        <input type="boxFee" class="form-control" [ngClass]="{'is-invalid' : isBoxFeeInvalid()}" id="boxFee" [(ngModel)]="venue.boxFee">
+
+        <label for="paddockFee">Paddock díj:</label>
+        <input type="paddockFee" class="form-control" [ngClass]="{'is-invalid' : isPaddockFeeInvalid()}" id="paddockFee" [(ngModel)]="venue.paddockFee">
+
+        <label for="date">Verseny időpontja:</label>
+        <div class="container-datepicker">
+        <ngb-datepicker [(ngModel)]="model" (navigate)="date = $event.next" id="datepicker" d></ngb-datepicker>
+        <ngb-timepicker [(ngModel)]="time" id="timepicker"></ngb-timepicker>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <div class="col-3  d-flex justify-content-end align-items-center">
+        <button class="btn btn-outline-primary" (click)="activeModal.dismiss()">Mégse</button>
+        <button type="button" class="btn btn-primary" (click)="saveVenue()" [disabled]="isSaving">Mentés</button>
+      </div>
+    </div>

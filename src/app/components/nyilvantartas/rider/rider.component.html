@@ -1,0 +1,42 @@
+<app-main-menu></app-main-menu>
+
+
+<div class="container mt-5 mb-3">
+  <div class="row justify-content-between">
+    <div class="col-9">
+      <h1>Versenyzők</h1>
+    </div>
+    <div class="col-3 d-flex justify-content-end align-items-center">
+      <app-add-rider-modal></app-add-rider-modal>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <table class="table table-bordered table-hover">
+    <thead class="thead">
+      <tr>
+        <th scope="col" class="align-middle">Név</th>
+        <th scope="col" class="align-middle">Születési év </th>
+        <th scope="col" class="align-middle">Kategória</th>
+        <th scope="col" class="align-middle">Telefonszám</th>
+        <th scope="col" class="align-middle">Email</th>
+        <th scope="col" class="align-middle">Edző/Felkészítő <br> neve</th>
+        <th scope="col" class="align-middle">Lovarda/ <br> Egyesület</th>
+        <th scope="col" class="align-middle">Startszám</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngIf="!isLoading && riders.length > 0">
+            <tr app-rider-row *ngFor="let r of riders" [rider]="r" (refreshWithData)="refreshList($event)" (refresh)="refreshList()"></tr>
+        </ng-container>
+        <tr class="text-center" *ngIf="!isLoading && riders.length == 0">
+            <td colspan="9">Nincs lovas az adatbázisban</td>
+        </tr>
+        <tr class="text-center" *ngIf="isLoading">
+            <td colspan="9">Betöltés...</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

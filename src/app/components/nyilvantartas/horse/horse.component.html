@@ -1,0 +1,38 @@
+
+<app-main-menu></app-main-menu>
+
+<div class="container mt-5 mb-3">
+  <div class="row justify-content-between">
+    <div class="col-9">
+      <h1>Lovak</h1>
+    </div>
+    <div class="col-3 d-flex justify-content-end align-items-center">
+        <app-add-horse-modal></app-add-horse-modal>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <table class="table table-bordered table-hover">
+    <thead class="thead">
+      <tr>
+        <th scope="col"class="align-middle">Név</th>
+        <th scope="col"class="align-middle">Születési év</th>
+        <th scope="col"class="align-middle">Fajta</th>
+        <th scope="col"class="align-middle">Startszám</th>
+        <th></th>
+      </tr>
+    </thead>
+     <tbody>
+      <ng-container *ngIf="!isLoading && horses.length > 0">
+          <tr app-horse-row *ngFor="let h of horses" [horse]="h" (refreshWithData)="refreshList($event)" (refresh)="refreshList()"></tr>
+      </ng-container>
+      <tr class="text-center" *ngIf="!isLoading && horses.length == 0">
+          <td colspan="5">Nincs ló az adatbázisban</td>
+      </tr>
+      <tr class="text-center" *ngIf="isLoading">
+          <td colspan="5">Betöltés...</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

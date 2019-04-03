@@ -1,0 +1,28 @@
+<body id="body">
+  
+  <div class="jumbotron">
+    <div class="row justify-content-md-center">
+      <img src="/assets/images/logo2.png">
+    </div>
+    <div class="row justify-content-md-center">
+      <h1>Bejelentkezés</h1>
+    </div>
+
+    <div class="row justify-content-md-center username-input">
+      <div class="form-group username-group">
+        <input type="text" class="form-control" placeholder="Felhasználónév" [ngClass]="{'is-invalid' : isNameEmpty}"
+          [(ngModel)]="user.username" (blur)="checkName()">
+        <div class="invalid-feedback">Adja meg a felhasználónevét!</div>
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center password-input">
+      <div class="form-group password-group">
+        <input type="password" class="form-control" placeholder="Jelszó" [ngClass]="{'is-invalid' : isPasswordEmpty}"
+          [(ngModel)]="user.password" (blur)="checkPassword()">
+        <div class="invalid-feedback">Adja meg a jelszavát!</div>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <button type="button" class="btn btn-primary" (click)="validateLoginForm()">Bejelentkezés</button>
+    </div>

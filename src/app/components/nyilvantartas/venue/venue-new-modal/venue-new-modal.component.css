@@ -1,0 +1,58 @@
+.modal-footer{
+  height: 69px;
+  width: 468px;
+}
+
+.modal-body{
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.button.close{
+  display: none;
+}
+
+.ngb-tp {
+  text-align: center;
+}
+
+.table{
+  text-align: left;
+
+}
+
+.btn-outline-primary{
+  color: #4A4843;
+  background-color: white;
+  border: 1px solid #4A4843;
+  margin-right: 5px;
+  width: 79.5px;
+  height: 36px;
+
+}
+
+.btn-outline-primary:hover {
+  color: white;
+  background-color:#4A4843;
+}
+
+.btn-outline-primary:active {
+  background-color: #4A4843;
+}
+
+.btn-primary{
+  background-color: rgba(255, 111, 97, 0.8);
+  color: white;
+  border: #4A4843;
+  width: 79.5px;
+  height: 36px;
+}
+.btn-primary:hover{
+  background-color: #4A4843;
+}
+
+.btn-primary:active{
+  background-color: rgb(255, 111, 97);
+}
+

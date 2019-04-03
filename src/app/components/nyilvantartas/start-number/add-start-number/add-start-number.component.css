@@ -1,0 +1,41 @@
+.btn {
+    color: #4A4843;
+    background-color: white;
+    border: 1px solid #4A4843;
+    margin-top: 70px;
+
+}
+
+.btn:hover {
+  background-color: #4A4843;
+  color: white;
+}
+
+.btn:active {
+  background-color: rgb(255, 111, 97);
+}
+
+#horse-list {
+    display: block;
+    max-height: 200px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+#rider-list {
+    display: block;
+    max-height: 200px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+h1{
+    padding-top: 70px;
+}
+
+.card{
+    border: none;
+
+
+}
+

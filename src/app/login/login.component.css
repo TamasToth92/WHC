@@ -1,0 +1,60 @@
+body{
+    padding-top: 0px;
+    height: 100vh;
+    background-image: url("/../../assets/images/main.jpg");
+    background-size: cover; 
+    background-color: rgb(236, 219, 168);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.btn-primary {
+    margin-top: 10px;
+    background-color: #FF6F61;
+    border-color: #FF6F61;
+    margin-bottom: 20px;
+}
+
+.btn-link{
+    color: #4A4843;
+}
+
+.btn-primary:hover{
+    background-color: #4A4843;
+}
+
+.password-input{
+    margin-top: 10px;
+}
+
+h1{
+    color: #4A4843;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 20px;
+}
+input {
+    width: 217px;
+    height: 38px;
+}
+
+/*#hero {
+    
+    height: 100vh;
+    background-image: url("/../../assets/images/main.jpg");
+    background-size: cover; 
+    background-color: rgb(236, 219, 168);
+    font-family: 'Open Sans', sans-serif;
+}
+*/
+.jumbotron{
+    justify-content: center;
+    vertical-align: center;
+    height:450px;
+    width:400px;
+    margin: auto;
+    background-color: rgba(236, 219, 168, 0.3);
+    border-color:4px rgba(236, 219, 168, 0.8);
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 20px;
+    
+}
+

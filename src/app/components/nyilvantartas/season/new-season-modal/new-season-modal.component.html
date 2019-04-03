@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalCenterTitle">Új szezon nyitása</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+  <div class="container">
+    <div class="table form-group name-group">
+      <tr>
+        <label for="seasonDate">Szezon dátuma: </label></tr>
+        <input type="text" name="" value="">
+        <label for="registrationFee">Regisztrációs díj: </label>
+      <tr>
+        <input type="text" name="" value=""></tr>
+        <div class="modal-footer">
+          <div class="col-3  d-flex justify-content-end align-items-center">
+            <button class="btn btn-outline-primary" (click)="activeModal.dismiss()">Mégse</button>
+            <button type="button" class="btn btn-primary" (click)="saveVenue()" [disabled]="isSaving">Mentés</button>
+          </div>
+        </div>

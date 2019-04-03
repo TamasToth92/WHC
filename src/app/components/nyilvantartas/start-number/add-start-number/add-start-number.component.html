@@ -1,0 +1,74 @@
+<app-main-menu></app-main-menu>
+<div class="container mt-5 mb-3">
+  <div class="row justify-content-between">
+    <div class="col-6">
+      <h1>Startszám hozzáadása</h1>
+    </div>
+    <div class="col-3 d-flex justify-content-end align-items-center">
+      <a class="btn btn-outline-primary" routerLink="/startnumber">Vissza</a>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <h2>Lovak</h2> <input type="text" placeholder="Keresés" [(ngModel)]="horseSearchToken">
+    </div>
+    <div class="col-3 d-flex justify-content-end align-items-center">
+      <app-add-horse-modal></app-add-horse-modal>
+    </div>
+    <div class="col">
+      <h2>Versenyzők</h2> <input placeholder="Keresés" [(ngModel)]="riderSearchToken" />
+    </div>
+    <div class="col-3 d-flex justify-content-end align-items-center">
+      <app-add-rider-modal></app-add-rider-modal>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div id="horse-list" class="col">
+      <ul class="list-group">
+        <button type="button" class="list-group-item list-group-item-action" *ngFor="let horse of horses | filterPipe: horseSearchToken"
+          (click)="setSelectedHorse(horse)">{{horse.name}}</button>
+      </ul>
+    </div>
+    <div id="rider-list" class="col">
+      <ul class="list-group">
+        <button type="button" class="list-group-item list-group-item-action" *ngFor="let rider of riders | filterPipe: riderSearchToken"
+          (click)="setSelectedRider(rider)">{{rider.name}}</button>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card w-50">
+        <div class="card-body">
+          <h5 class="card-title">{{selectedHorse.name}}</h5><br>
+          <p class="card-text">{{selectedHorse.yearOfBirth}}</p><br>
+          <p class="card-text">{{selectedHorse.breed}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+        <div class="card w-60">
+          <div class="card-body">
+            <h5 class="card-title" > Startszám: </h5>
+            <input class="card-text" name="startNumberInput" [(ngModel)]="startNumberInput">
+          </div>
+        </div>
+      </div>
+    <div class="col">
+      <div  class="card w-50">
+        <div class="card-body">
+          <h5 class="card-title">{{selectedRider.name}}</h5>
+          <p class="card-text">{{selectedRider.status}}</p>
+          <p class="card-text">{{selectedRider.ranchName}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+        <button type="button" class="btn btn-primary btn-lg" (click)="addNewStartNumber()">Startszám felvétele</button>
+    </div>
+  </div>
+</div>

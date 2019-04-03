@@ -1,0 +1,23 @@
+.btn-outline-secondary  {
+    color: #4A4843;
+    background-color: white;
+    width: 63.81px;
+    height: 29px;
+    padding: 0px;
+    font-size: 9pt;
+    
+}
+
+.btn-outline-secondary:hover {
+    color: white;
+    background-color: #184A45;
+    border: 1px solid #184A45;
+}
+
+.btn-outline-secondary:active {
+  background-color: #4A4843;
+}
+
+.scorePage{
+  padding: 20px;
+}

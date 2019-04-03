@@ -1,0 +1,19 @@
+.add-button {
+    background-color: rgba(255, 111, 97, 0.8);
+    color: white;
+    padding: 1em 1.5em;
+    border: #4A4843;
+    margin-right: 10px;
+  }
+  
+  .add-button:hover {
+  background-color: #4A4843;
+  }
+  
+  .add-button:active {
+  background-color: rgb(255, 111, 97);
+  }
+
+  h1{
+    padding-top: 70px;
+}

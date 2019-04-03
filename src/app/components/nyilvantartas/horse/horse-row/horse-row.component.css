@@ -1,0 +1,53 @@
+
+.btn-outline-secondary  {
+    color: #4A4843;
+    background-color: white;
+    border: 1px solid #4A4843;
+   
+}
+
+.btn-outline-secondary:hover {
+    color: white;
+    background-color:#4A4843;
+}
+
+.btn-outline-secondary:active {
+  background-color: #4A4843;
+}
+
+.btn-primary {
+    background-color: rgba(255, 111, 97, 0.8);
+    color: white;
+    border: #4A4843;
+    margin-right: 2px;
+    width: 63.81px;
+    height: 29px;
+    padding: 0px;
+}
+
+.btn-primary:hover{
+    background-color: #4A4843;
+}
+
+.btn-primary:active{
+    background-color: rgb(255, 111, 97);
+}
+
+.btn-secondary  {
+    color: white;
+    background-color: #184A45;
+    width: 63.81px;
+    height: 29px;
+    padding: 0px;
+    
+}
+
+.btn-secondary:hover {
+    color: #4A4843;
+    background-color: white;
+    border: 1px solid #184A45;
+}
+
+.btn-secondary:active {
+  background-color: #4A4843;
+}

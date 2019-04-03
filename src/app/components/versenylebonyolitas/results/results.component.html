@@ -1,0 +1,36 @@
+<app-main-menu></app-main-menu>
+
+<div class="container mt-5 mb-3">
+  <div class="row justify-content-between">
+    <h1>Versenyek pontozása</h1>
+    <div class="col-9">
+      <h2>{{races.name}}, {{races.dateOfRace | date : 'yyyy. MM. dd. hh:mm'}}</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <table class="table table-bordered table-hover">
+    <thead class="thead">
+      <tr>
+        <th scope="col">Versenytípus</th>
+        <th scope="col">Versenyszám</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+
+    <!-- Versenyek betöltése, ha tölt betöltés felirat vagy ha a lekért tömb üres akkor kiírja-->
+    <tbody>
+      <ng-container *ngIf="!isLoading && races.raceCategories.length > 0">
+        <tr app-results-row *ngFor="let r of races.raceCategories" [raceCategory]='r' (refreshWithData)="refreshList($event)"
+          (refresh)="refreshList()"></tr>
+      </ng-container>
+      <tr class="text-center" *ngIf="!isLoading && races.raceCategories.length == 0">
+        <td colspan="5">Nincs verseny az adatbázisban</td>
+      </tr>
+      <tr class="text-center" *ngIf="isLoading">
+        <td colspan="5">Betöltés...</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

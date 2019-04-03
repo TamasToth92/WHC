@@ -1,0 +1,32 @@
+<link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<ng-container *ngIf="! editMode">
+  <td>{{ horse.name }}</td>
+  <td>{{ horse.yearOfBirth }}</td>
+  <td>{{ horse.breed }}</td>
+  <td>{{ horse.startNumberValues }}</td>
+  <td>
+      <button type="button" class="btn btn-outline-secondary btn-sm" (click)="setEditMode(true)">Szerkesztés</button>
+  </td>
+</ng-container>
+<ng-container *ngIf="editMode">
+  <td>
+      <input type="text" class="form-control"  [(ngModel)]="cloneHorse.name">
+  </td>
+  <td>
+      <input type="text" class="form-control"  [(ngModel)]="cloneHorse.yearOfBirth">
+  </td>
+  <td>
+      <input type="text" class="form-control"  [(ngModel)]="cloneHorse.breed">
+  </td>
+  <td>
+      <input type="number" class="form-control"  [(ngModel)]="cloneHorse.startNumberValues">
+  </td>
+  <td>
+      <button type="button" class="btn btn-primary btn-sm" (click)="saveHorse()" [disabled]="isSaving">
+          <span *ngIf="isSaving" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          <span *ngIf="isSaving">Mentés folyamatban...</span>
+          <span *ngIf="! isSaving">Mentés</span>
+      </button>
+      <button type="button" class="btn btn-secondary btn-sm" (click)="setEditMode(false)" *ngIf="! isSaving">Mégse</button>
+  </td>
+</ng-container>

@@ -1,0 +1,41 @@
+.add-button {
+  background-color: rgba(255, 111, 97, 0.8);
+  color: white;
+  padding: 1em 1.5em;
+  border: #4A4843;
+  margin-right: 10px;
+}
+
+.add-button:hover {
+background-color: #4A4843;
+}
+
+.add-button:active {
+background-color: rgb(255, 111, 97);
+}
+
+
+
+.button  {
+  color: #4A4843;
+  background-color: white;
+  border: 1px solid #4A4843;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 10px;
+  margin-right: 5px;
+ 
+}
+
+.button:hover {
+  color: white;
+  background-color:#4A4843;
+}
+
+.button:active {
+background-color: #4A4843;
+}
+
+h1{
+  padding-top: 70px;
+}
+

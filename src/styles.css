@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+/*body {
+    padding-top: 70px;
+}*/
+
+.table {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0px;
+    font-size: 14px;
+    table-layout: fixed ;
+    width: 100% ;
+    background-color: rgba(167, 155, 130, 0.1);
+    vertical-align: center;
+    
+}
+td {
+    /*white-space: normal !important; */
+    word-wrap: break-word;  
+  }
+
+.btn {
+    background-color: rgba(255, 111, 97, 0.5);
+}
+
+.thead {
+    background-color: #4A4843;
+    color: white;
+    font-size: 13px;
+}
+
+h1{
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 17px;
+}
+
+h2{
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 11px;
+}
+
+
+
+.modal-body{
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 14px;
+}
+
+.modal-footer{
+    height: 69px;
+    width: 498px;
+    background-color: rgba(167, 155, 130, 0.1);
+}
+
+.modal-header{
+    height: 69px;
+    width: 498px;
+    background-color: rgba(167, 155, 130, 0.1);
+    font-family: 'Open Sans', sans-serif;
+}
+

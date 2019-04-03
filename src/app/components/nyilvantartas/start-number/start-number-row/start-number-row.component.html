@@ -1,0 +1,32 @@
+<ng-container *ngIf="! editMode">
+    <td>{{ number.startNrValue }}</td>
+    <td>{{ number.riderName }}</td>
+    <td>{{ number.horseName }}</td>
+    <td>{{ number.isActive }}</td>
+    <td>
+        <button type="button" class="btn btn-outline-secondary btn-sm" (click)="setEditMode(true)">Szerkesztés</button>
+    </td>
+  </ng-container>
+  <ng-container *ngIf="editMode">
+    <td>
+        <input type="number" class="form-control" [(ngModel)]="cloneNumber.startNrValue">
+    </td>
+    <td>
+        <input type="text" class="form-control" [(ngModel)]="cloneNumber.riderName">
+    </td>
+    <td>
+        <input type="text" class="form-control" [(ngModel)]="cloneNumber.horseName">
+    </td>
+    <td>
+        <select type="text" class="form-control" [(ngModel)]="cloneNumber.isActive">
+        </select>
+    </td>
+    <td>
+        <button type="button" class="btn btn-primary btn-sm" (click)="saveRider()" [disabled]="isSaving">
+            <span *ngIf="isSaving" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            <span *ngIf="isSaving">Mentés folyamatban...</span>
+            <span *ngIf="! isSaving">Mentés</span>
+        </button>
+        <button type="button" class="btn btn-secondary btn-sm" (click)="setEditMode(false)" *ngIf="! isSaving">Mégse</button>
+    </td>
+  </ng-container>

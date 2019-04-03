@@ -1,0 +1,66 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="add-rider-modal">Új versenyző hozzáadása</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="name">Versenyző neve</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="riderNameInput" [ngClass]="{ 'is-invalid' : isNameInvalid }" name="riderName" [(ngModel)]="rider.name" (blur)="checkName()">
+            <div class="invalid-feedback">Adja meg a versenyző nevét!</div>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="yearOfBirth">Születési év</label>
+            <div class="input-group">
+              <input type="number" class="form-control" id="riderYearOfBirthInput" [ngClass]="{ 'is-invalid' : isYearInvalid }" name="yearOfBirth" [(ngModel)]="rider.yearOfBirth" (blur)="checkYear()">
+              <div class="invalid-feedback">Adja meg a versenyző születési évét!</div>
+            </div>
+          </div>
+          <div class="form-group">
+              <label for="status">Versenykategória</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="riderStatusInput" [ngClass]="{ 'is-invalid' : isStatusInvalid }" name="status" [(ngModel)]="rider.status"(blur)="checkStatus()">
+                <div class="invalid-feedback">Adja meg a versenykategóriát!</div>
+              </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Telefonszám</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="riderPhoneInput" [ngClass]="{ 'is-invalid' : isPhoneNumberInvalid }" name="phoneNumber" [(ngModel)]="rider.phoneNumber" (blur)="checkPhoneNumber()">
+                  <div class="invalid-feedback">Adja meg a versenyző telefonszámát!</div>
+                </div>
+              </div>
+              <div class="form-group">
+                  <label for="name">E-mail cím</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="riderEmailInput" [ngClass]="{ 'is-invalid' : isEmailInvalid }" name="email" [(ngModel)]="rider.email" (blur)="checkEmail()">
+                    <div class="invalid-feedback">Adja meg a versenyző e-mail címét!</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Edző/Felkészítő neve</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="riderCoachInput" [ngClass]="{ 'is-invalid' : isCoachNameInvalid }" name="nameOfCoach" [(ngModel)]="rider.nameOfCoach" (blur)="checkCoachName()">
+                      <div class="invalid-feedback">Adja meg a felkészítő nevét!</div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="name">Lovarda/Egyesület neve</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" id="riderRanchInput" [ngClass]="{ 'is-invalid' : isRanchNameInvalid }" name="ranchName" [(ngModel)]="rider.ranchName"(blur)="checkRanchName()">
+                        <div class="invalid-feedback">Adja meg az egyesület nevét!</div>
+                      </div>
+                    </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="addNewRider()">Mentés</button>
+    </div>
+  </ng-template>
+  
+  <button class="btn btn-outline-primary" (click)="open(content)">Új versenyző hozzáadása</button>

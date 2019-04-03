@@ -1,0 +1,45 @@
+<app-main-menu></app-main-menu>
+
+<div class="VenuePage" id="Venuepage">
+  <div class="container mt-5 mb-3">
+    <div class="row justify-content-between">
+      <div class="col-6">
+        <h1>Helyszínek</h1>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="addVenue()">
+        Új helyszín hozzáadása
+      </button>
+    </div>
+    <div class="container">
+      <table class="table table-bordered table-hover">
+        <thead class="thead">
+          <tr>
+            <th scope="col">Helyszín</th>
+            <th scope="col">Verseny dátuma</th>
+            <th scope="col">Díjak</th>
+            <th scope="col">Ló szállásdíj</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngIf="!isLoading && venues.length > 0">
+            <tr *ngFor="let v of venues">
+              <td id="venuesTable">{{v.name}}</td>
+              <td id="venuesTable">{{v.dateOfRace | date : 'yyyy. MM. dd. HH:mm' }}</td>
+              <td>Nevezési díj: {{ v.entryFee}}Ft <br>
+                Start díjak: {{v.startFee}}Ft/start</td>
+              <td>Box díj: {{v.boxFee}}Ft <br>
+                  Karám díj: {{v.paddockFee}}Ft</td>
+            </tr>
+          </ng-container>
+          <tr class="text-center" *ngIf="!isLoading && venues.length == 0">
+            <td colspan="4">Nincs helyszín az adatbázisban</td>
+          </tr>
+          <tr class="text-center" *ngIf="isLoading">
+            <td colspan="4">Betöltés...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

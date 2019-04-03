@@ -1,0 +1,59 @@
+<app-main-menu></app-main-menu>
+
+<div class="RegistrationPage" id="page">
+  <div class="container mt-5 mb-3">
+    <div class="row justify-content-between">
+      <div class="col-6">
+        <h1>Regisztráció</h1>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container" colspan="3">
+    <button class="add-button">Szezon regisztrálása</button>
+    <button class="add-button">Helyszín regisztrálása</button>
+    <button class="add-button">Versenyszám regisztrálása</button>
+
+    <!-- <p>Startszámok selectorba... </p>
+    <select multiple class="form-control" id="sel2">
+
+      <option *ngFor="let n of numbers">{{n.startNrValue}}</option>
+    </select> -->
+  </div>
+</div>
+
+
+<div class="raceResults" id="raceResultsPage"></div>
+  <div class="container mt-5 mb-3">
+    
+    <div class="container">
+      <table class="table table-bordered table-hover">
+        <thead class="thead">
+          <tr>
+            <th scope="col" class="col-6">Szezon</th>
+            <th scope="col" class="col-6">Helyszínek</th>
+          
+
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngIf="!isLoading && seasons.length > 0">
+            <tr *ngFor="let s of seasons" (refreshWithData)="refreshSeasonsList($event)" (refresh)="refreshSeasonsList()">
+                
+              <td>{{s.year}}</td>
+              <td>{{s.venue}}</td>
+              <td><button type="button" class="btn btn-outline-secondary btn-sm" routerLink="registration/season">Megtekint</button></td>
+                
+            </tr>
+          </ng-container>
+        
+          <tr class="text-center" *ngIf="!isLoading && seasons.length == 0">
+            <td colspan="8">Nincs versenyeredmény az adatbázisban</td>
+          </tr>
+          <tr class="text-center" *ngIf="isLoading">
+            <td colspan="8">Betöltés...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

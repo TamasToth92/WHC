@@ -1,0 +1,38 @@
+<div class="modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Ló hozzáadása</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="container">
+					<div class="form-group horseName-group">
+						<label for="exampleInputHorseName">Ló Neve</label>
+						<input type="name" class="form-control" id="exampleInputHorseName"
+							[ngClass]="{ 'is-invalid' : isNameInvalid }" [(ngModel)]="horse.name" (blur)="checkName()">
+						<div class="invalid-feedback">Kérlek, add meg a ló nevét!</div>
+					</div>
+					<div class="form-group breed-group">
+						<label for="exampleInputBreed">Ló fajtája</label>
+						<input type="breed" class="form-control" [ngClass]="{ 'is-invalid' : isBreedInvalid }"
+							id="exampleInputBreed" [(ngModel)]="horse.breed" (blur)="checkBreed()">
+						<div class="invalid-feedback">Kérlek, add meg a ló fajtáját!</div>
+					</div>
+					<div class="form-group year-group">
+						<label for="exampleInputYear">Ló születési éve</label>
+						<input type="year" class="form-control" [ngClass]="{ 'is-invalid' : isYearInvalid() }" id="exampleInputYear"
+							[(ngModel)]="horse.year">
+						<div class="invalid-feedback"> Kérlek, add meg a ló születési évét!</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" routerLink="/horse">Bezárás</button>
+				<button type="button" class="btn btn-primary">Hozzáadás</button>
+			</div>
+		</div>
+	</div>
+</div>

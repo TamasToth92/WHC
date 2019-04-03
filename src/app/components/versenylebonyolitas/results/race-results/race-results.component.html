@@ -1,0 +1,42 @@
+<app-main-menu></app-main-menu>
+
+
+<div class="scorePage" id="page">
+  <div class="container mt-5 mb-3">
+    <div class="row justify-content-between">
+      <div class="col-6">
+        <h1>Verseny pontozása</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="raceResults" id="raceResultsPage"></div>
+<div class="container mt-5 mb-3">
+  <div class="container">
+    <table class="table table-bordered table-hover">
+      <thead class="thead">
+        <tr>
+          <th scope="col" class="col-6">Startszám</th>
+          <th scope="col" class="col-6">Versenyző</th>
+          <th scope="col" class="col-6">Ló</th>
+          <th scope="col" class="col-6">Pontszám</th>
+          <th scope="col" class="col-6"></th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="!isLoading && raceResults.length > 0">
+          <tr *ngFor="let r of raceResults" (refreshWithData)="refreshList($event)" (refresh)="refreshList()">
+          </tr>
+        </ng-container>
+        <tr class="text-center" *ngIf="!isLoading && raceResults.length == 0">
+          <td colspan="8">Nincs versenyeredmény az adatbázisban</td>
+        </tr>
+        <tr class="text-center" *ngIf="isLoading">
+          <td colspan="8">Betöltés...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="add-horse-modal">Új ló hozzáadása</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="name">Ló neve</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="horseNameInput" [ngClass]="{ 'is-invalid' : isNameInvalid }" name="horsename" [(ngModel)]="horse.name" (blur)="checkName()">
+          <div class="invalid-feedback">Adja meg a ló nevét!</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="breed">Ló fajtája</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="horseBreedInput" [ngClass]="{ 'is-invalid' : isBreedInvalid }" name="horsebreed"[(ngModel)]="horse.breed" (blur)="checkBreed()">
+          <div class="invalid-feedback">Adja meg a ló fajtáját!</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="dateOfBirth">Ló születési éve </label>
+        <div class="input-group">
+            <input type="number" class="form-control" id="horseYearOfBirthInput" [ngClass]="{ 'is-invalid' : isYearInvalid }"name="horseYearOfBirth" [(ngModel)]="horse.yearOfBirth" (blur)="checkYear()">
+            <div class="invalid-feedback">Adja meg a ló születési évét! Csak számot adhat meg.</div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="addNewHorse()">Mentés</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-outline-primary" (click)="open(content)">Új ló hozzáadása</button>

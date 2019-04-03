@@ -1,0 +1,57 @@
+
+
+#hero {
+    height: auto;
+    min-height: 100vh;
+
+    background-image: url("../../../assets/images/main.jpg");
+    background-size: cover; 
+    background-color: rgb(236, 219, 168);
+}
+
+#hero .container {
+    width: 100vh;
+    
+    margin: 0 auto;
+    margin-top: 0px;
+    text-align: center;
+  }
+.welcome-box h1 {
+    font-size: 22px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 7px;
+    text-align: center;
+    vertical-align: center;
+    line-height: 1.25;
+    color: white;
+    text-transform: uppercase;
+  }
+  /*span{
+    color: #fb6542;
+    
+  }*/
+.welcome-box{
+    padding: 290px;
+    width: 1000px;
+    min-height: 100vh;
+    border: 3px;
+    border-radius: 15px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    vertical-align: center;
+  }
+
+.footer {
+   position: absolute;
+   right: 0;
+   bottom: 0;  
+   left: 0;
+   padding: 1rem;
+   text-align: center;
+}
+.footer-color-dark {
+   background-color: rgb(236, 219, 168);
+   font-family: 'Open Sans', sans-serif;
+   letter-spacing: 5px;
+}
